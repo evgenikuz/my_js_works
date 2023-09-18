@@ -1,6 +1,6 @@
-let numberOfFilms = prompt("Сколько фильмов вы уже посмотрели?", "");
+const numberOfFilms = +prompt("Сколько фильмов вы уже посмотрели?", "");
 
-let personalMovieDB = {
+const personalMovieDB = {
     count: numberOfFilms,
     movies: {},
     actors: {},
@@ -8,13 +8,12 @@ let personalMovieDB = {
     privat: false
 };
 
-let firstMovieQuestion = prompt("Напишите название одного из последних просмотренных фильмов");
-let firstMovieRating = prompt("На сколько оцените его?");
-let secondMovieQuestion = prompt("Напишите название одного из последних просмотренных фильмов");
-let secondMovieRating = prompt("На сколько оцените его?");
+const firstMovieQuestion = prompt("Напишите название одного из последних просмотренных фильмов", ""),
+    firstMovieRating = prompt("На сколько оцените его?", ""),
+    secondMovieQuestion = prompt("Напишите название одного из последних просмотренных фильмов", ""),
+    secondMovieRating = prompt("На сколько оцените его?", "");
 
-let movies = {
-    firstMovieQuestion: firstMovieRating,
-    secondMovieQuestion: secondMovieRating
-};
-console.log(movies);
+personalMovieDB.movies[firstMovieQuestion] = firstMovieRating;
+personalMovieDB.movies[secondMovieQuestion] = secondMovieRating;
+
+console.log(personalMovieDB);
